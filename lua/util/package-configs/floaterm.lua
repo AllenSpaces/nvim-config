@@ -25,9 +25,20 @@ function _Lua()
 end
 
 function _Git()
+	local width = vim.api.nvim_win_get_width(0)
+	local height = vim.api.nvim_win_get_height(0)
+
 	local git = Terminal:new({
 		cmd = "lazygit",
 		hidden = true,
+		direction = "float",
+		float_opts = {
+			border = "rounded",
+			width = width,
+			height = height,
+			row = 0,
+			col = 0,
+		},
 		on_close = function()
 			vim.cmd("checktime")
 		end,

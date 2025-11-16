@@ -17,7 +17,9 @@ function M.Config()
 				height = 0.6,
 				prompt_position = "top",
 			},
-			history = false,
+			history = {
+				path = "/Users/kernel/.nvim-utils/telescope/telescope-history",
+			},
 			path_display = {
 				"tail",
 			},
