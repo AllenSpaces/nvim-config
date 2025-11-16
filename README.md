@@ -143,43 +143,43 @@ echo 'export DEEPSEEK_API_KEY="your-api-key"' >> ~/.zshrc
 
 ### 核心插件
 
-| 插件 | 功能 | 状态 |
-|------|------|------|
-| **super-installer** | 插件管理器 | ✅ |
-| **lualine** | 状态栏 | ✅ |
-| **nvim-tree** | 文件浏览器 | ✅ |
-| **telescope** | 模糊搜索 | ✅ |
-| **nvim-web-devicons** | 文件图标 | ✅ |
+| 插件                  | 功能       | 状态 |
+| --------------------- | ---------- | ---- |
+| **super-installer**   | 插件管理器 | ✅   |
+| **lualine**           | 状态栏     | ✅   |
+| **nvim-tree**         | 文件浏览器 | ✅   |
+| **telescope**         | 模糊搜索   | ✅   |
+| **nvim-web-devicons** | 文件图标   | ✅   |
 
 ### 开发工具
 
-| 插件 | 功能 | 状态 |
-|------|------|------|
-| **nvim-treesitter** | 语法高亮 | ✅ |
-| **mason** | LSP 管理器 | ✅ |
-| **nvim-lspconfig** | LSP 配置 | ✅ |
-| **nvim-cmp** | 代码补全 | ✅ |
-| **luasnip** | 代码片段 | ✅ |
+| 插件                | 功能       | 状态 |
+| ------------------- | ---------- | ---- |
+| **nvim-treesitter** | 语法高亮   | ✅   |
+| **mason**           | LSP 管理器 | ✅   |
+| **nvim-lspconfig**  | LSP 配置   | ✅   |
+| **nvim-cmp**        | 代码补全   | ✅   |
+| **luasnip**         | 代码片段   | ✅   |
 
 ### 增强功能
 
-| 插件 | 功能 | 状态 |
-|------|------|------|
-| **codecompanion** | AI 代码助手 | ✅ |
-| **formatter** | 代码格式化 | ✅ |
-| **Comment.nvim** | 注释工具 | ✅ |
-| **nvim-autopairs** | 自动配对 | ✅ |
-| **hop.nvim** | 快速跳转 | ✅ |
+| 插件               | 功能        | 状态 |
+| ------------------ | ----------- | ---- |
+| **codecompanion**  | AI 代码助手 | ✅   |
+| **formatter**      | 代码格式化  | ✅   |
+| **Comment.nvim**   | 注释工具    | ✅   |
+| **nvim-autopairs** | 自动配对    | ✅   |
+| **hop.nvim**       | 快速跳转    | ✅   |
 
 ### UI 增强
 
-| 插件 | 功能 | 状态 |
-|------|------|------|
-| **noice** | 命令界面 | ⚠️ 已禁用 |
-| **notify** | 通知系统 | ✅ |
-| **transparent** | 透明背景 | ✅ |
-| **snacks** | 通知美化 | ✅ |
-| **render-markdown** | Markdown 渲染 | ✅ |
+| 插件                | 功能          | 状态      |
+| ------------------- | ------------- | --------- |
+| **noice**           | 命令界面      | ⚠️ 已禁用 |
+| **notify**          | 通知系统      | ✅        |
+| **transparent**     | 透明背景      | ✅        |
+| **snacks**          | 通知美化      | ✅        |
+| **render-markdown** | Markdown 渲染 | ✅        |
 
 ## ⌨️ 快捷键
 
@@ -225,19 +225,18 @@ echo 'export DEEPSEEK_API_KEY="your-api-key"' >> ~/.zshrc
 
 ### 支持的语言
 
-| 语言 | LSP 服务器 | 配置文件 | 状态 |
-|------|------------|----------|------|
-| **Lua** | lua_ls | `lsp/lua_ls.lua` | ✅ |
-| **JavaScript** | ts_ls | `lsp/ts_ls.lua` | ✅ |
-| **TypeScript** | ts_ls | `lsp/ts_ls.lua` | ✅ |
-| **Python** | pylsp | `lsp/pylsp.lua` | ✅ |
-| **Java** | jdtls | `lsp/jdtls.lua` | ✅ |
-| **C/C++** | clangd | `lsp/clangd.lua` | ✅ |
-| **HTML** | html | `lsp/html.lua` | ✅ |
-| **CSS** | cssls | `lsp/cssls.lua` | ✅ |
-| **JSON** | jsonls | `lsp/jsonls.lua` | ✅ |
-| **Vue** | vue_ls | `lsp/vue_ls.lua` | ✅ |
-| **Bash** | bashls | `lsp/bashls.lua` | ✅ |
+| 语言           | LSP 服务器 | 配置文件         | 状态 |
+| -------------- | ---------- | ---------------- | ---- |
+| **Lua**        | lua_ls     | `lsp/lua_ls.lua` | ✅   |
+| **JavaScript** | ts_ls      | `lsp/ts_ls.lua`  | ✅   |
+| **TypeScript** | ts_ls      | `lsp/ts_ls.lua`  | ✅   |
+| **Python**     | pylsp      | `lsp/pylsp.lua`  | ✅   |
+| **Java**       | jdtls      | `lsp/jdtls.lua`  | ✅   |
+| **C/C++**      | clangd     | `lsp/clangd.lua` | ✅   |
+| **HTML**       | html       | `lsp/html.lua`   | ✅   |
+| **CSS**        | cssls      | `lsp/cssls.lua`  | ✅   |
+| **JSON**       | jsonls     | `lsp/jsonls.lua` | ✅   |
+| **Bash**       | bashls     | `lsp/bashls.lua` | ✅   |
 
 ### LSP 功能
 
@@ -289,7 +288,6 @@ echo 'export DEEPSEEK_API_KEY="your-api-key"' >> ~/.zshrc
    ```
 
 3. **使用 AI 助手**
-
    - 打开命令面板，选择 AI 操作
    - 使用 `<Leader>ga` 接受 AI 建议
    - 使用 `<Leader>gr` 拒绝 AI 建议
@@ -315,7 +313,7 @@ echo 'export DEEPSEEK_API_KEY="your-api-key"' >> ~/.zshrc
 local config_modules = {
     -- 禁用某个插件
     { name = "util.package-configs.noice", enabled = false },
-    
+
     -- 启用某个插件
     { name = "util.package-configs.telescope", enabled = true },
 }
@@ -429,6 +427,7 @@ nvim
 **解决方案**：
 
 1. 检查 API Key 是否正确设置：
+
    ```bash
    echo $DEEPSEEK_API_KEY
    ```
