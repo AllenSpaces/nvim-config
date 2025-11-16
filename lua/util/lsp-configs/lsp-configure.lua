@@ -108,7 +108,6 @@ M.LspConfig = {
 			"gopls",
 			"rust_analyzer",
 			"bashls",
-			"vue_ls",
 			"html",
 			"cssls",
 			"clangd",
