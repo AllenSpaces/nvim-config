@@ -89,9 +89,6 @@ function M.Config()
 				-- float window ui
 				"MunifTanjim/nui.nvim",
 
-				-- notify
-				"rcarriga/nvim-notify",
-
 				-- prettier command
 				"folke/noice.nvim",
 

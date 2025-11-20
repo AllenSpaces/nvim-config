@@ -47,6 +47,9 @@ function M.Config()
 			preset = "round",
 			row = "@markup.row",
 		},
+		completions = {
+			lsp = { enabled = true },
+		},
 	})
 end
 

@@ -41,72 +41,69 @@ function M.Config()
 		},
 		{
 			mode = "User",
-			pattern = "CodeCompanionChatOpened",
-			callback = function()
-				vim.wo.number = false
-				vim.wo.relativenumber = false
-				vim.notify(
-					"DeepSeek At Your Service",
-					vim.log.levels.INFO,
-					{ id = "welcome", title = "DeepSeek", icon = "󱢴" }
-				)
+			pattern = "CodeCompanionChat*",
+			callback = function(chat)
+				if chat.match == "CodeCompanionChatOpened" then
+					vim.wo.number = false
+					vim.wo.relativenumber = false
+					vim.notify(
+						"DeepSeek At Your Service",
+						vim.log.levels.INFO,
+						{ id = "deepseek_chat", title = "DeepSeek", icon = "󱢴" }
+					)
+			elseif chat.match == "CodeCompanionChatClosed" then
+					vim.notify(
+						"Tranks For Using DeepSeek Chat",
+						vim.log.levels.INFO,
+						{ id = "deepseek_chat", title = "DeepSeek", icon = "󱢴" }
+					)
+				end
 			end,
 			enable = true,
 		},
 		{
 			mode = "User",
-			pattern = "CodeCompanionChatHidden",
-			callback = function()
-				vim.notify(
-					"Tranks For Using DeepSeek Chat",
-					vim.log.levels.INFO,
-					{ id = "welcome", title = "DeepSeek", icon = "󱢴" }
-				)
-			end,
-			enable = true,
-		},
-		{
-			mode = "User",
-			pattern = "CodeCompanionRequestStarted",
-			callback = function()
-				local spinner = {
-					"▁",
-					"▂",
-					"▃",
-					"▄",
-					"▅",
-					"▆",
-					"▇",
-					"▆",
-					"▅",
-					"▄",
-					"▃",
-					"▂",
-					"▁",
-				}
-				vim.notify("Server Request...", vim.log.levels.INFO, {
-					id = "deepseek_progress",
-					title = "DeepSeek",
-					timeout = false,
-					opts = function(notif)
-						notif.icon = spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
-					end,
-				})
-			end,
-			enable = true,
-		},
-		{
-			mode = "User",
-			pattern = { "CodeCompanionRequestStreaming", "CodeCompanionInlineFinished" },
-			callback = function()
-				vim.notify("Server Finished", vim.log.levels.INFO, {
-					id = "deepseek_progress",
-					title = "DeepSeek",
-					timeout = true,
-					opts = function(notif)
-						notif.icon = ""
-					end,
-				})
+			pattern = "CodeCompanionRequest*",
+			callback = function(request)
+				if request.match == "CodeCompanionRequestStarted" then
+					local spinner = {
+						"▁",
+						"▂",
+						"▃",
+						"▄",
+						"▅",
+						"▆",
+						"▇",
+						"▆",
+						"▅",
+						"▄",
+						"▃",
+						"▂",
+						"▁",
+					}
+					vim.notify("Server Requesting ...", vim.log.levels.INFO, {
+						id = "deepseek_progress",
+						title = "DeepSeek",
+						timeout = false,
+						opts = function(notif)
+							notif.icon = spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+						end,
+					})
+				elseif
+					request.match == "CodeCompanionRequestStreaming" or request.name == "CodeCompanionInlineFinished"
+				then
+					vim.notify("Server Request Success", vim.log.levels.INFO, {
+						id = "deepseek_progress",
+						title = "DeepSeek",
+						timeout = true,
+					})
+				elseif request.match == "CodeCompanionRequestError" then
+					vim.notify("Server Request Failed", vim.log.levels.ERROR, {
+						id = "deepseek_progress",
+						title = "DeepSeek",
+						timeout = true,
+					})
+				end
 			end,
 			enable = true,
 		},

@@ -18,6 +18,9 @@ function M.Config()
 		},
 		notifier = {
 			enabled = true,
+			auto_close = {
+				enabled = true,
+			},
 			history = {
 				minimal = true,
 			},
@@ -27,6 +30,9 @@ function M.Config()
 				info = "󰬐 ",
 				debug = "󰬋 ",
 				trace = "󰬛 ",
+			},
+			styles = {
+				ft = "markdown",
 			},
 		},
 		scope = {

@@ -1,6 +1,5 @@
 local M = {}
 local status, AI = pcall(require, "codecompanion")
-local DeepSeekKey = os.getenv("DEEPSEEK_API_KEY")
 local prompt = require("util.code-companion.prompts.system.deepseek-v3").prompt
 
 if not status then

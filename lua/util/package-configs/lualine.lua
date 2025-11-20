@@ -25,14 +25,15 @@ function M.Config()
 		},
 		sections = {},
 		tabline = {
-			lualine_a = {},
+			lualine_a = {
+				"diff",
+			},
 			lualine_b = {
 				{
 					"filetype",
-					icon_only = false,
+					icon_only = true,
 				},
 				"branch",
-				"diff",
 				{
 					"filename",
 					path = 0,

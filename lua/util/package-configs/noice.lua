@@ -1,6 +1,5 @@
 local M = {}
 local status_noice, noice = pcall(require, "noice")
-local statis_notify, notify = pcall(require, "notify")
 
 if not status_noice then
 	M.Config = function()
@@ -9,24 +8,7 @@ if not status_noice then
 	return M
 end
 
-if not statis_notify then
-	M.Config = function()
-		vim.notify("notify is not found", vim.log.levels.ERROR, { title = "Nvim" })
-	end
-	return M
-end
-
 function M.Config()
-	notify.setup({
-		background_colour = "#000000",
-		stages = "slide",
-		timeout = 1000,
-		render = "default",
-		max_width = "50",
-		fps = 120,
-		level = 1,
-	})
-
 	noice.setup({
 		cmdline = {
 			enabled = true,
